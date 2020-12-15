@@ -3,18 +3,24 @@ import React from 'react';
 // import './TodoItem.css';
 import { Todo } from '../modules/todos';
 import styled from 'styled-components';
+import useTodoActions from '../hooks/useTodoActions';
 type TodoItemProps = {
   todos: Todo;
 };
 
 function TodoItem({ todos }: TodoItemProps) {
+  const { onToggle, onRemove } = useTodoActions(todos.id);
   {
     console.log(todos, '두투리스트');
   }
   return (
     <Item className={`Item ${todos.done ? 'done' : ''}`}>
-      <DoneWrite className='write'>{todos.write}</DoneWrite>
-      <Remove className='remove'>X</Remove>
+      <DoneWrite className='write' onClick={onToggle}>
+        {todos.write}
+      </DoneWrite>
+      <Remove className='remove' onClick={onRemove}>
+        X
+      </Remove>
     </Item>
   );
 }
