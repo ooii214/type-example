@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
-import { type } from 'os';
+import todos from './todos';
 const rootReducer = combineReducers({
   counter,
+  todos,
 });
 export default rootReducer;
 
