@@ -8,7 +8,7 @@ import TodoList from '../components/TodoList';
 const Home: React.FunctionComponent = () => {
   return (
     <>
-      {/* <Counter /> */}
+      <Counter />
       <TodoInsert />
       <TodoList />
     </>
